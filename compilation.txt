@@ -1,0 +1,2 @@
+windres myico.rc -o resource.o //for the icon 
+gcc revshelltest.c resource.o -o revshell -lws2_32 //creates executable

